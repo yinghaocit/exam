@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Card, Button, Row, Col } from 'antd';
 import 'antd/dist/reset.css';
 import CreateQuestionPage from './CreateQuestionPage';
 import GenerateExamPage from './GenerateExamPage';
@@ -15,15 +15,22 @@ const WelcomePage = () => (
         <Menu.Item key="welcome">欢迎页面</Menu.Item>
       </Menu>
     </Header>
-    <Content style={{ padding: '50px', textAlign: 'center' }}>
-      <h1>欢迎使用考试系统</h1>
-      <p>请选择功能</p>
-      <div>
-        <p>
-          <a href="/create-question" style={{ marginRight: '20px' }}>录入考题</a>
-          <a href="/generate-exam">出题</a>
-        </p>
-      </div>
+    <Content style={{ padding: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
+      <Card title="欢迎使用考试系统" style={{ width: 400, textAlign: 'center' }}>
+        <p>请选择功能</p>
+        <Row gutter={16} justify="center">
+          <Col>
+            <Button type="primary" href="/create-question">
+              录入考题
+            </Button>
+          </Col>
+          <Col>
+            <Button type="default" href="/generate-exam">
+              出题
+            </Button>
+          </Col>
+        </Row>
+      </Card>
     </Content>
     <Footer style={{ textAlign: 'center' }}>考试系统 ©2025</Footer>
   </Layout>

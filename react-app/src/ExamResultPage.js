@@ -30,8 +30,8 @@ const ExamResultPage = () => {
         </Header>
         <Content style={{ padding: '24px', margin: 0, minHeight: 280 }}>
           <div style={{ textAlign: 'center', color: '#888', fontSize: 18 }}>暂无考试数据</div>
-          <Button type="primary" style={{ marginTop: '20px' }} onClick={() => navigate('/')}>
-            返回首页
+          <Button type="primary" style={{ marginTop: '20px' }} onClick={() => navigate('/generate-exam')}>
+            返回试卷
           </Button>
         </Content>
       </Layout>
@@ -160,7 +160,7 @@ const ExamResultPage = () => {
               );
             })}
           </div>
-          <Button type="primary" onClick={() => navigate('/')} style={{ marginTop: '30px', width: '100%' }}>返回首页</Button>
+          <Button type="primary" onClick={() => navigate('/generate-exam')} style={{ marginTop: '30px', width: '100%' }}>返回试卷</Button>
         </Sider>
         <Content style={{ padding: '24px', margin: 0, minHeight: 280 }}>
           <Radio.Group

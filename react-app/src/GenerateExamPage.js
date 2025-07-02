@@ -10,8 +10,8 @@ const GenerateExamPage = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [isModalVisible, setIsModalVisible] = useState(true);
-  const [singleChoiceCount, setSingleChoiceCount] = useState(0);
-  const [multipleChoiceCount, setMultipleChoiceCount] = useState(0);
+  const [singleChoiceCount, setSingleChoiceCount] = useState(200);
+  const [multipleChoiceCount, setMultipleChoiceCount] = useState(20);
   const [language, setLanguage] = useState('cn');
 
   const fetchQuestions = async () => {
@@ -29,12 +29,16 @@ const GenerateExamPage = () => {
   };
 
   const handleModalOk = async () => {
+    localStorage.removeItem('examQuestions');
+    localStorage.removeItem('examAnswers');
     await fetchQuestions();
     setIsModalVisible(false);
   };
 
   const handleAnswer = (questionId, answerId) => {
-    setAnswers({ ...answers, [questionId]: answerId });
+    const newAnswers = { ...answers, [questionId]: answerId };
+    setAnswers(newAnswers);
+    localStorage.setItem('examAnswers', JSON.stringify(newAnswers));
   };
 
   const arraysEqualIgnoreOrder = (a, b) =>
@@ -123,7 +127,13 @@ const GenerateExamPage = () => {
                       display: 'flex',
                       justifyContent: 'center',
                       alignItems: 'center',
-                      backgroundColor: answers[item.id] ? '#4caf50' : '#d3d3d3',
+                      backgroundColor:
+                        index === currentQuestionIndex
+                          ? '#1890ff'
+                          : answers[item.id]
+                          ? '#4caf50'
+                          : '#d3d3d3',
+                      fontWeight: index === currentQuestionIndex ? 'bold' : 'normal',
                       color: '#fff',
                       borderRadius: '5px',
                       cursor: 'pointer',
@@ -147,7 +157,19 @@ const GenerateExamPage = () => {
             title="选择题目数量"
             open={isModalVisible}
             onOk={handleModalOk}
-            onCancel={() => setIsModalVisible(false)}
+            okText="重新出题"
+            cancelText="继续答题"
+            onCancel={() => {
+              const cached = JSON.parse(localStorage.getItem('examQuestions') || '[]');
+              const cachedAnswers = JSON.parse(localStorage.getItem('examAnswers') || '{}');
+              if (Array.isArray(cached) && cached.length > 0) {
+                setQuestions(cached);
+                setAnswers(cachedAnswers);
+                setIsModalVisible(false);
+              } else {
+                alert('暂无缓存的题目，请重新出题');
+              }
+            }}
           >
             <div style={{ marginBottom: '10px' }}>
               <span>单选题数量: </span>
@@ -196,7 +218,9 @@ const GenerateExamPage = () => {
                           const updated = currentAnswers.includes(answer.id)
                             ? currentAnswers.filter(id => id !== answer.id)
                             : [...currentAnswers, answer.id];
-                          setAnswers({ ...answers, [qid]: updated });
+                          const newAnswers = { ...answers, [qid]: updated };
+                          setAnswers(newAnswers);
+                          localStorage.setItem('examAnswers', JSON.stringify(newAnswers));
                         }}
                         style={{ fontSize: '16px', padding: '10px 20px' }}
                       >
