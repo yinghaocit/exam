@@ -84,6 +84,9 @@ async def generate_exam(req: ExamRequest):
     try:
         # 查询指定题型的题目
         for qtype, count in zip(req.types, req.count_per_type):
+            #  如果count为0，则跳过该题型
+            if count <= 0:
+                continue
             questions = await Question.filter(type=qtype).prefetch_related("answers")
             random.shuffle(questions)
             questions = questions[:count]
@@ -112,6 +115,6 @@ async def generate_exam(req: ExamRequest):
                     ]
                 })
 
-            return result
+        return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"服务器错误: {str(e)}")
