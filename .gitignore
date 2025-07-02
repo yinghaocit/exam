@@ -1,16 +1,6 @@
 # Python
 __pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.pyc
-*.so
-*.egg-info/
 .venv/
-venv/
-env/
-ENV/
-*.sqlite3
 
 # VSCode
 .vscode/
@@ -29,13 +19,6 @@ docker-compose.override.yml
 .DS_Store
 Thumbs.db
 node_modules
-# Backend
-backend/__pycache__/
-backend/.venv/
-backend/.mypy_cache/
-backend/.pytest_cache/
-backend/.env
-backend/.env.*
 
 # Migration/Database
 backend/migrations/__pycache__/
