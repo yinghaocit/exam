@@ -127,15 +127,15 @@ const ExamResultPage = () => {
       </Header>
       <Layout>
         <Sider width={250} style={{ background: '#fff', padding: '10px', borderRight: '1px solid #ddd' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, 50px)', gap: '10px', marginTop: '20px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, 30px)', gap: '6px', marginTop: '20px' }}>
             {questions.map((item, index) => {
               const r = results.find(r => r.questionNumber === item.id) || {};
               return (
                 <div
                   key={item.id}
                   style={{
-                    width: '50px',
-                    height: '50px',
+                    width: '30px',
+                    height: '30px',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
