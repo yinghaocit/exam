@@ -1,11 +1,17 @@
 import json
 import httpx
 import asyncio
-import traceback
+from tenacity import retry, stop_after_attempt, wait_fixed, retry_if_exception_type
+from more_itertools import chunked
+from tqdm.asyncio import tqdm_asyncio
+from tqdm import tqdm  # 用于 tqdm.write()
 
 API_URL = "http://localhost:8000/questions/"
 INPUT_FILE = "questions.json"
-MAX_CONCURRENT_REQUESTS = 5  # 并发数量上限
+FAILED_FILE = "failed.json"
+MAX_CONCURRENT_REQUESTS = 5
+BATCH_SLEEP_INTERVAL = 0.5  # 每批之间等待时间，防止拥塞
+
 
 def convert_to_api_format(question):
     q_type = 2 if len(question["correct_answer"]) > 1 else 1
@@ -20,33 +26,55 @@ def convert_to_api_format(question):
         "answers": answers
     }
 
+
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(2), retry=retry_if_exception_type(httpx.RequestError))
 async def upload_question(client, semaphore, question):
     async with semaphore:
         payload = convert_to_api_format(question)
         try:
             response = await client.post(API_URL, json=payload)
             if response.status_code == 200:
-                print(f"[✓] 第 {question['number']} 题上传成功")
+                tqdm.write(f"[✓] 第 {question['number']} 题上传成功")
                 return True
             else:
-                print(f"[×] 第 {question['number']} 题上传失败: {response.status_code} {response.text}")
+                tqdm.write(f"[×] 第 {question['number']} 题上传失败: {response.status_code} {response.text}")
                 return False
         except Exception as e:
-            print(f"[×] 第 {question['number']} 题请求异常: {type(e).__name__}: {str(e)}")
-            traceback.print_exc()
-            return False
+            tqdm.write(f"[×] 第 {question['number']} 题请求异常: {type(e).__name__}: {str(e)}")
+            raise  # 触发重试
+
 
 async def upload_all():
+    tqdm.write("开始上传所有题目...")
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
         questions = json.load(f)
 
+    failed_questions = []
     semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
-    async with httpx.AsyncClient(timeout=60.0) as client:
-        tasks = [upload_question(client, semaphore, q) for q in questions]
-        results = await asyncio.gather(*tasks)
 
-    success_count = sum(results)
-    print(f"\n✅ 上传完成：成功 {success_count} / 共 {len(questions)} 道题")
+    limits = httpx.Limits(
+        max_connections=MAX_CONCURRENT_REQUESTS * 2,
+        max_keepalive_connections=MAX_CONCURRENT_REQUESTS
+    )
+
+    async with httpx.AsyncClient(timeout=60.0, limits=limits) as client:
+        success_count = 0
+        for batch_index, batch in enumerate(chunked(questions, MAX_CONCURRENT_REQUESTS), start=1):
+            tqdm.write(f"\n🚀 正在上传第 {batch_index} 批题目，共 {len(batch)} 道题")
+            tasks = [upload_question(client, semaphore, q) for q in batch]
+            results = await tqdm_asyncio.gather(*tasks, desc="上传中", ncols=80)
+            for q, result in zip(batch, results):
+                if not result:
+                    failed_questions.append(q)
+            success_count += sum(results)
+            await asyncio.sleep(BATCH_SLEEP_INTERVAL)
+
+    tqdm.write(f"\n✅ 上传完成：成功 {success_count} / 共 {len(questions)} 道题")
+    if failed_questions:
+        with open(FAILED_FILE, "w", encoding="utf-8") as f:
+            json.dump(failed_questions, f, ensure_ascii=False, indent=2)
+        tqdm.write(f"⚠️ 失败的题目已保存到 {FAILED_FILE}，可以稍后重试。")
+
 
 if __name__ == "__main__":
     asyncio.run(upload_all())
