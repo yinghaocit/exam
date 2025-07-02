@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+*.egg-info/
+.venv/
+venv/
+env/
+ENV/
+*.sqlite3
+
+# VSCode
+.vscode/
+
+# Node.js & React
+react-app/node_modules
+react-app/build/
+npm-debug.log
+yarn-error.log
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# OS files
+.DS_Store
+Thumbs.db
+node_modules
+# Backend
+backend/__pycache__/
+backend/.venv/
+backend/.mypy_cache/
+backend/.pytest_cache/
+backend/.env
+backend/.env.*
+
+# Migration/Database
+backend/migrations/__pycache__/
+backend/migrations/models/__pycache__/
+backend/migrations/models/*.pyc
+
+# IDE
+.idea/
+*.iml
+
+# Others
+*.swp
+*.swo
