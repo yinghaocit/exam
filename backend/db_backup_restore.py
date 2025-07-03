@@ -1,9 +1,13 @@
 import json
 import asyncio
 from tortoise import Tortoise, run_async
+from dotenv import load_dotenv
+import os
 
-DB_URL = "mysql://root:root@127.0.0.1:3306/exam_db"
-BACKUP_FILE = "backup_all_models.json"
+load_dotenv()
+
+DB_URL = f"mysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
+BACKUP_FILE = os.getenv("BACKUP_FILE", "backup_all_models.json")
 
 async def backup():
     await Tortoise.init(db_url=DB_URL, modules={'models': ['models']})  # 这里' models'请替换成你的模型模块路径

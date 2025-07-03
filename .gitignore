@@ -32,3 +32,6 @@ backend/migrations/models/*.pyc
 # Others
 *.swp
 *.swo
+
+
+.env

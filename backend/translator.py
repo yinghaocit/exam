@@ -1,12 +1,16 @@
 import json
 import asyncio
+import os
+from dotenv import load_dotenv
 from openai import AsyncOpenAI
 from tenacity import retry, stop_after_attempt, wait_fixed, retry_if_exception_type
 
+load_dotenv()
+
 # 初始化异步 OpenAI 客户端
 client = AsyncOpenAI(
-    api_key="hk-05t5d51000055906b2c55b197c599386635d008bb58eac13",
-    base_url="https://api.openai-hk.com/v1",
+    api_key=os.getenv("OPENAI_API_KEY"),
+    base_url=os.getenv("OPENAI_BASE_URL"),
     timeout=60.0
 )
 

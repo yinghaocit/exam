@@ -1,3 +1,4 @@
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 import React, { useState } from 'react';
 import { Layout, Menu, Form, Input, Button, Space, Checkbox } from 'antd';
 import { Link } from 'react-router-dom';
@@ -42,7 +43,7 @@ const CreateQuestionPage = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:8000/questions/', {
+      const response = await fetch(`${API_BASE_URL}/questions/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

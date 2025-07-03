@@ -1,3 +1,8 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 import json
 import httpx
 import asyncio
@@ -6,11 +11,11 @@ from more_itertools import chunked
 from tqdm.asyncio import tqdm_asyncio
 from tqdm import tqdm  # 用于 tqdm.write()
 
-API_URL = "http://localhost:8000/questions/"
+API_URL = os.getenv("BASE_URL", "http://localhost:8000") + "/questions"
 INPUT_FILE = "questions.json"
 FAILED_FILE = "failed.json"
 MAX_CONCURRENT_REQUESTS = 5
-BATCH_SLEEP_INTERVAL = 0.5  # 每批之间等待时间，防止拥塞
+BATCH_SLEEP_INTERVAL = 0.5
 
 
 def convert_to_api_format(question):

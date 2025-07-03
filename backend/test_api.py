@@ -1,6 +1,10 @@
 import requests
+import os
+from dotenv import load_dotenv
 
-BASE_URL = "http://127.0.0.1:8000"
+load_dotenv()
+
+BASE_URL = os.getenv("BASE_URL", "http://127.0.0.1:8000")
 
 def test_insert_question(question_data):
     response = requests.post(f"{BASE_URL}/questions/", json=question_data)

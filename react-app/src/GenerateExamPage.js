@@ -1,3 +1,4 @@
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 import React, { useState, useEffect } from 'react';
 import { Tag, Layout, Button, Space, Modal, InputNumber, Radio, Menu } from 'antd';
 import { useNavigate, Link } from 'react-router-dom';
@@ -15,7 +16,7 @@ const GenerateExamPage = () => {
   const [language, setLanguage] = useState('cn');
 
   const fetchQuestions = async () => {
-    const response = await fetch('http://localhost:8000/generate_exam', {
+    const response = await fetch(`${API_BASE_URL}/generate_exam`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

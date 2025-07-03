@@ -1,8 +1,13 @@
 # config/DBSettings.py
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 TORTOISE_ORM = {
     "connections": {
-        "default": "mysql://root:root@127.0.0.1:3306/exam_db",
+        "default": f"mysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}",
     },
     "apps": {
         "models": {
