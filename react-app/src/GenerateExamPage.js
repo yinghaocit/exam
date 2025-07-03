@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Tag, Layout, Button, Space, Modal, InputNumber, Radio, Menu } from 'antd';
+import { Tag, Layout, Button, Space, Modal, InputNumber, Radio, Menu, Checkbox } from 'antd';
 import { useNavigate, Link } from 'react-router-dom';
 
 const { Header, Content, Sider } = Layout;
@@ -14,6 +14,7 @@ const GenerateExamPage = () => {
   const [singleChoiceCount, setSingleChoiceCount] = useState(200);
   const [multipleChoiceCount, setMultipleChoiceCount] = useState(20);
   const [language, setLanguage] = useState('cn');
+  const [autoNext, setAutoNext] = useState(false);
 
   const fetchQuestions = async () => {
     const response = await fetch(`${API_BASE_URL}/generate_exam`, {
@@ -40,6 +41,15 @@ const GenerateExamPage = () => {
     const newAnswers = { ...answers, [questionId]: answerId };
     setAnswers(newAnswers);
     localStorage.setItem('examAnswers', JSON.stringify(newAnswers));
+
+    const current = questions[currentQuestionIndex];
+    if (
+      autoNext &&
+      current?.type === 1 &&
+      currentQuestionIndex < questions.length - 1
+    ) {
+      setTimeout(() => setCurrentQuestionIndex(currentQuestionIndex + 1), 300);
+    }
   };
 
   const arraysEqualIgnoreOrder = (a, b) =>
@@ -109,6 +119,9 @@ const GenerateExamPage = () => {
               <Link to="/generate-exam">出题</Link>
             </Menu.Item>
           </Menu>
+          <Button type="primary" onClick={handleSubmit} style={{ margin: '10px 0', width: '100%' }}>
+            提交
+          </Button>
           {Array.isArray(questions) && questions.length > 0 && (
             <>
               <div
@@ -116,7 +129,8 @@ const GenerateExamPage = () => {
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fill, 30px)',
                   gap: '6px',
-                  marginTop: '20px'
+                  marginTop: '20px',
+                  justifyContent: 'center'
                 }}
               >
                 {questions.map((item, index) => (
@@ -193,6 +207,15 @@ const GenerateExamPage = () => {
                 <Radio.Button value="en">英文</Radio.Button>
                 <Radio.Button value="both">双语</Radio.Button>
               </Radio.Group>
+              <div>
+                <Checkbox
+                  checked={autoNext}
+                  onChange={(e) => setAutoNext(e.target.checked)}
+                  style={{ marginBottom: '20px' }}
+                >
+                  自动跳转到下一题（仅单选题）
+                </Checkbox>
+              </div>
 
               <div style={{ marginBottom: '10px' }}>
                 {questions[currentQuestionIndex]?.type === 1 && <Tag color='blue'>单选题</Tag>}
@@ -250,9 +273,17 @@ const GenerateExamPage = () => {
                   style={{ marginRight: '10px' }}
                 >上一题</Button>
                 <Button
-                  disabled={currentQuestionIndex === questions.length - 1}
-                  onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}
-                >下一题</Button>
+                  type="primary"
+                  onClick={() => {
+                    if (currentQuestionIndex === questions.length - 1) {
+                      handleSubmit();
+                    } else {
+                      setCurrentQuestionIndex(currentQuestionIndex + 1);
+                    }
+                  }}
+                >
+                  {currentQuestionIndex === questions.length - 1 ? '提交' : '下一题'}
+                </Button>
               </div>
             </div>
           )}

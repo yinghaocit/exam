@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const SECRET_KEY = 'ciandt20251';
+const SECRET_KEY = process.env.REACT_APP_SECRET_KEY; // 默认密钥
 
 function ProtectedApp() {
   const [key, setKey] = useState('');
