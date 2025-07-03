@@ -14,7 +14,7 @@ from tqdm import tqdm  # 用于 tqdm.write()
 API_URL = os.getenv("BASE_URL", "http://localhost:8000") + "/questions"
 INPUT_FILE = "questions.json"
 FAILED_FILE = "failed.json"
-MAX_CONCURRENT_REQUESTS = 5
+MAX_CONCURRENT_REQUESTS = 10
 BATCH_SLEEP_INTERVAL = 0.5
 
 
@@ -25,6 +25,7 @@ def convert_to_api_format(question):
         for key, val in question["options"].items()
     ]
     return {
+        "original_number": question['number'],
         "type": q_type,
         "question": question["question"],
         "explanation": question["explanation"],

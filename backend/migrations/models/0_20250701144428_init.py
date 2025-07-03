@@ -9,7 +9,8 @@ async def upgrade(db: BaseDBAsyncClient) -> str:
     `question_en` LONGTEXT NOT NULL COMMENT '英文问题',
     `question_cn` LONGTEXT NOT NULL COMMENT '中文问题',
     `explanation_en` LONGTEXT NOT NULL COMMENT '英文解析',
-    `explanation_cn` LONGTEXT NOT NULL COMMENT '中文解析'
+    `explanation_cn` LONGTEXT NOT NULL COMMENT '中文解析',
+    `original_number` INT(100) COMMENT '原题号'
 ) CHARACTER SET utf8mb4;
 CREATE TABLE IF NOT EXISTS `answer` (
     `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,

@@ -31,7 +31,7 @@
     "number": 3,
     "question": "A company wants to classify human genes into 20 categories based on gene characteristics. The company\nneeds an ML algorithm to document how the inner mechanism of the model affects the output.\nWhich ML algorithm meets these requirements?",
     "options": {
-      "A": "Decision trees\n店铺：学习小店66",
+      "A": "Decision trees",
       "B": "Linear regression",
       "C": "Logistic regression",
       "D": "Neural networks"
@@ -73,7 +73,7 @@
     "number": 6,
     "question": "A company uses Amazon SageMaker for its ML pipeline in a production environment. The company has\nlarge input data sizes up to 1 GB and processing times up to 1 hour. The company needs near real-time\nlatency.\nWhich SageMaker inference option meets these requirements?",
     "options": {
-      "A": "Real-time inference\n店铺：学习小店66",
+      "A": "Real-time inference",
       "B": "Serverless inference",
       "C": "Asynchronous inference",
       "D": "Batch transform"
@@ -113,7 +113,7 @@
   },
   {
     "number": 9,
-    "question": "A company wants to create a chatbot by using a foundation model (FM) on Amazon Bedrock. The FM\nneeds to access encrypted data that is stored in an Amazon S3 bucket. The data is encrypted with Amazon\nS3 managed keys (SSE-S3).\nThe FM encounters a failure when attempting to access the S3 bucket data.\nWhich solution will meet these requirements?\n店铺：学习小店66",
+    "question": "A company wants to create a chatbot by using a foundation model (FM) on Amazon Bedrock. The FM\nneeds to access encrypted data that is stored in an Amazon S3 bucket. The data is encrypted with Amazon\nS3 managed keys (SSE-S3).\nThe FM encounters a failure when attempting to access the S3 bucket data.\nWhich solution will meet these requirements?",
     "options": {
       "A": "Ensure that the role that Amazon Bedrock assumes has permission to decrypt data with the correct\nencryption key.",
       "B": "Set the access permissions for the S3 buckets to allow public access to enable access over the internet.",
@@ -155,7 +155,7 @@
   },
   {
     "number": 12,
-    "question": "A company wants to use generative AI to increase developer productivity and software development. The\ncompany wants to use Amazon Q Developer.\n店铺：学习小店66\n\nWhat can Amazon Q Developer do to help the company meet these requirements?",
+    "question": "A company wants to use generative AI to increase developer productivity and software development. The\ncompany wants to use Amazon Q Developer.\n\nWhat can Amazon Q Developer do to help the company meet these requirements?",
     "options": {
       "A": "Create software snippets, reference tracking, and open source license tracking.",
       "B": "Run an application without provisioning or managing servers.",
@@ -197,7 +197,7 @@
   },
   {
     "number": 15,
-    "question": "Which metric measures the runtime efficiency of operating AI models?\n店铺：学习小店66",
+    "question": "Which metric measures the runtime efficiency of operating AI models?",
     "options": {
       "A": "Customer satisfaction score (CSAT)",
       "B": "Training time for each epoch",
@@ -239,7 +239,7 @@
   },
   {
     "number": 18,
-    "question": "An AI practitioner wants to use a foundation model (FM) to design a search application. The search\napplication must handle queries that have text and images.\nWhich type of FM should the AI practitioner use to power the search application?\n店铺：学习小店66",
+    "question": "An AI practitioner wants to use a foundation model (FM) to design a search application. The search\napplication must handle queries that have text and images.\nWhich type of FM should the AI practitioner use to power the search application?",
     "options": {
       "A": "Multi-modal embedding model",
       "B": "Text embedding model",
@@ -284,7 +284,7 @@
     "question": "Which feature of Amazon OpenSearch Service gives companies the ability to build vector database\napplications?",
     "options": {
       "A": "Integration with Amazon S3 for object storage",
-      "B": "Support for geospatial indexing and queries\n店铺：学习小店66",
+      "B": "Support for geospatial indexing and queries",
       "C": "Scalable index management and nearest neighbor search capability",
       "D": "Ability to perform real-time analysis on streaming data"
     },
@@ -327,7 +327,7 @@
     "options": {
       "A": "Set a low limit on the number of tokens the FM can produce.",
       "B": "Use batch inferencing to process detailed responses.",
-      "C": "Experiment and refine the prompt until the FM produces the desired responses.\n店铺：学习小店66",
+      "C": "Experiment and refine the prompt until the FM produces the desired responses.",
       "D": "Define a higher number for the temperature parameter."
     },
     "correct_answer": [
@@ -365,7 +365,7 @@
   },
   {
     "number": 27,
-    "question": "A company has developed an ML model for image classification. The company wants to deploy the model\nto production so that a web application can use the model.\nThe company needs to implement a solution to host the model and serve predictions without managing any\nof the underlying infrastructure.\n店铺：学习小店66\n\nWhich solution will meet these requirements?",
+    "question": "A company has developed an ML model for image classification. The company wants to deploy the model\nto production so that a web application can use the model.\nThe company needs to implement a solution to host the model and serve predictions without managing any\nof the underlying infrastructure.\n\nWhich solution will meet these requirements?",
     "options": {
       "A": "Use Amazon SageMaker Serverless Inference to deploy the model.",
       "B": "Use Amazon CloudFront to deploy the model.",
@@ -407,7 +407,7 @@
   },
   {
     "number": 30,
-    "question": "A company is using the Generative AI Security Scoping Matrix to assess security responsibilities for its\n店铺：学习小店66\n\nsolutions. The company has identified four different solution scopes based on the matrix.\nWhich solution scope gives the company the MOST ownership of security responsibilities?",
+    "question": "A company is using the Generative AI Security Scoping Matrix to assess security responsibilities for its\n\nsolutions. The company has identified four different solution scopes based on the matrix.\nWhich solution scope gives the company the MOST ownership of security responsibilities?",
     "options": {
       "A": "Using a third-party enterprise application that has embedded generative AI features.",
       "B": "Building an application by using an existing third-party generative AI foundation model (FM).",
@@ -449,7 +449,7 @@
   },
   {
     "number": 33,
-    "question": "店铺：学习小店66\n\nWhich AWS service or feature can help an AI development team quickly deploy and consume a foundation\nmodel (FM) within the team's VPC?",
+    "question": "Which AWS service or feature can help an AI development team quickly deploy and consume a foundation\nmodel (FM) within the team's VPC?",
     "options": {
       "A": "Amazon Personalize",
       "B": "Amazon SageMaker JumpStart",
@@ -491,7 +491,7 @@
   },
   {
     "number": 36,
-    "question": "A company built a deep learning model for object detection and deployed the model to production.\nWhich AI process occurs when the model analyzes a new image to identify objects?\n店铺：学习小店66",
+    "question": "A company built a deep learning model for object detection and deployed the model to production.\nWhich AI process occurs when the model analyzes a new image to identify objects?",
     "options": {
       "A": "Training",
       "B": "Inference",
@@ -533,7 +533,7 @@
   },
   {
     "number": 39,
-    "question": "A medical company is customizing a foundation model (FM) for diagnostic purposes. The company needs\nthe model to be transparent and explainable to meet regulatory requirements.\nWhich solution will meet these requirements?\n店铺：学习小店66",
+    "question": "A medical company is customizing a foundation model (FM) for diagnostic purposes. The company needs\nthe model to be transparent and explainable to meet regulatory requirements.\nWhich solution will meet these requirements?",
     "options": {
       "A": "Configure the security and compliance by using Amazon Inspector.",
       "B": "Generate simple metrics, reports, and examples by using Amazon SageMaker Clarify.",
@@ -573,7 +573,7 @@
     "correct_answer": [
       "B"
     ],
-    "explanation": "Increasing the number of epochs allows the model to train for more iterations, improving its accuracy until\nthe model reaches an optimal level. The other options are either less effective or unrelated to improving\n店铺：学习小店66\n\naccuracy."
+    "explanation": "Increasing the number of epochs allows the model to train for more iterations, improving its accuracy until\nthe model reaches an optimal level. The other options are either less effective or unrelated to improving\n\naccuracy."
   },
   {
     "number": 42,
@@ -619,7 +619,7 @@
   },
   {
     "number": 45,
-    "question": "店铺：学习小店66\n\nAn ecommerce company wants to build a solution to determine customer sentiments based on written\ncustomer reviews of products.\nWhich AWS services meet these requirements? (Choose two.)",
+    "question": "An ecommerce company wants to build a solution to determine customer sentiments based on written\ncustomer reviews of products.\nWhich AWS services meet these requirements? (Choose two.)",
     "options": {
       "A": "Amazon Lex",
       "B": "Amazon Comprehend",
@@ -654,7 +654,7 @@
       "A": "User-generated content",
       "B": "Moderation logs",
       "C": "Content moderation guidelines",
-      "D": "Benchmark datasets\n店铺：学习小店66"
+      "D": "Benchmark datasets"
     },
     "correct_answer": [
       "D"
@@ -693,7 +693,7 @@
   },
   {
     "number": 50,
-    "question": "A company is using an Amazon Bedrock base model to summarize documents for an internal use case.\nThe company trained a custom model to improve the summarization quality.\n店铺：学习小店66\n\nWhich action must the company take to use the custom model through Amazon Bedrock?",
+    "question": "A company is using an Amazon Bedrock base model to summarize documents for an internal use case.\nThe company trained a custom model to improve the summarization quality.\n\nWhich action must the company take to use the custom model through Amazon Bedrock?",
     "options": {
       "A": "Purchase Provisioned Throughput for the custom model.",
       "B": "Deploy the custom model in an Amazon SageMaker endpoint for real-time inference.",
@@ -737,7 +737,7 @@
     "number": 53,
     "question": "A company needs to build its own large language model (LLM) based on only the company's private data.\nThe company is concerned about the environmental effect of the training process.\nWhich Amazon EC2 instance type has the LEAST environmental effect when training LLMs?",
     "options": {
-      "A": "Amazon EC2 C series\n店铺：学习小店66",
+      "A": "Amazon EC2 C series",
       "B": "Amazon EC2 G series",
       "C": "Amazon EC2 P series",
       "D": "Amazon EC2 Trn series"
@@ -779,7 +779,7 @@
     "number": 56,
     "question": "A digital devices company wants to predict customer demand for memory hardware. The company does not\nhave coding experience or knowledge of ML algorithms and needs to develop a data-driven predictive\nmodel. The company needs to perform analysis on internal data and external data.\nWhich solution will meet these requirements?",
     "options": {
-      "A": "Store the data in Amazon S3. Create ML models and demand forecast predictions by using Amazon\nSageMaker built-in algorithms that use the data from Amazon S3.\n店铺：学习小店66",
+      "A": "Store the data in Amazon S3. Create ML models and demand forecast predictions by using Amazon\nSageMaker built-in algorithms that use the data from Amazon S3.",
       "B": "Import the data into Amazon SageMaker Data Wrangler. Create ML models and demand forecast\npredictions by using SageMaker built-in algorithms.",
       "C": "Import the data into Amazon SageMaker Data Wrangler. Build ML models and demand forecast\npredictions by using an Amazon Personalize Trending-Now recipe.",
       "D": "Import the data into Amazon SageMaker Canvas. Build ML models and demand forecast predictions by\nselecting the values in the data from SageMaker Canvas."
@@ -819,7 +819,7 @@
   },
   {
     "number": 59,
-    "question": "An AI practitioner has built a deep learning model to classify the types of materials in images. The AI\n店铺：学习小店66\n\npractitioner now wants to measure the model performance.\n \nWhich metric will help the AI practitioner evaluate the performance of the model?",
+    "question": "An AI practitioner has built a deep learning model to classify the types of materials in images. The AI\n\npractitioner now wants to measure the model performance.\n \nWhich metric will help the AI practitioner evaluate the performance of the model?",
     "options": {
       "A": "Confusion matrix",
       "B": "Correlation matrix",
@@ -861,7 +861,7 @@
   },
   {
     "number": 62,
-    "question": "店铺：学习小店66\n\nA company is building an ML model to analyze archived data. The company must perform inference on\nlarge datasets that are multiple GBs in size. The company does not need to access the model predictions\nimmediately.\nWhich Amazon SageMaker inference option will meet these requirements?",
+    "question": "A company is building an ML model to analyze archived data. The company must perform inference on\nlarge datasets that are multiple GBs in size. The company does not need to access the model predictions\nimmediately.\nWhich Amazon SageMaker inference option will meet these requirements?",
     "options": {
       "A": "Batch transform",
       "B": "Real-time inference",
@@ -899,7 +899,7 @@
     "correct_answer": [
       "B"
     ],
-    "explanation": "Domain adaptation fine-tuning allows the FM to better understand the complex scientific terms by training it\nwith domain-specific data, improving its performance on such specialized content. The other options are\neither insufficient or not directly related to handling complex terminology effectively.\n店铺：学习小店66"
+    "explanation": "Domain adaptation fine-tuning allows the FM to better understand the complex scientific terms by training it\nwith domain-specific data, improving its performance on such specialized content. The other options are\neither insufficient or not directly related to handling complex terminology effectively."
   },
   {
     "number": 65,
@@ -936,7 +936,7 @@
       "A": "Use Amazon Macie to scan the model's output for sensitive data and set up alerts for potential\nviolations.",
       "B": "Configure AWS CloudTrail to monitor the model's responses and create alerts for any detected personal\ninformation.",
       "C": "Use Guardrails for Amazon Bedrock to filter content. Set up Amazon CloudWatch alarms for notification\nof policy violations.",
-      "D": "Implement Amazon SageMaker Model Monitor to detect data drift and receive alerts when model quality\ndegrades.\n店铺：学习小店66"
+      "D": "Implement Amazon SageMaker Model Monitor to detect data drift and receive alerts when model quality\ndegrades."
     },
     "correct_answer": [
       "C"
@@ -975,7 +975,7 @@
     "number": 70,
     "question": "Which strategy evaluates the accuracy of a foundation model (FM) that is used in image classification\ntasks?",
     "options": {
-      "A": "Calculate the total cost of resources used by the model.\n店铺：学习小店66",
+      "A": "Calculate the total cost of resources used by the model.",
       "B": "Measure the model's accuracy against a predefined benchmark dataset.",
       "C": "Count the number of layers in the neural network.",
       "D": "Assess the color accuracy of images processed by the model."
@@ -1017,7 +1017,7 @@
   },
   {
     "number": 73,
-    "question": "A company has documents that are missing some words because of a database error. The company wants\nto build an ML model that can suggest potential words to fill in the missing text.\n店铺：学习小店66\n\nWhich type of model meets this requirement?",
+    "question": "A company has documents that are missing some words because of a database error. The company wants\nto build an ML model that can suggest potential words to fill in the missing text.\n\nWhich type of model meets this requirement?",
     "options": {
       "A": "Topic modeling",
       "B": "Clustering models",
@@ -1059,7 +1059,7 @@
   },
   {
     "number": 76,
-    "question": "A company is using few-shot prompting on a base model that is hosted on Amazon Bedrock. The model\n店铺：学习小店66\n\ncurrently uses 10 examples in the prompt. The model is invoked once daily and is performing well. The\ncompany wants to lower the monthly cost.\nWhich solution will meet these requirements?",
+    "question": "A company is using few-shot prompting on a base model that is hosted on Amazon Bedrock. The model\n\ncurrently uses 10 examples in the prompt. The model is invoked once daily and is performing well. The\ncompany wants to lower the monthly cost.\nWhich solution will meet these requirements?",
     "options": {
       "A": "Customize the model by using fine-tuning.",
       "B": "Decrease the number of tokens in the prompt.",
@@ -1097,7 +1097,7 @@
     "correct_answer": [
       "A"
     ],
-    "explanation": "To ensure that the custom model does not generate responses based on confidential data, the best\napproach is to retrain the model without including the confidential data. This prevents the model from\nlearning patterns associated with that sensitive information, thereby avoiding its use in inference. The other\n店铺：学习小店66\n\noptions do not address the root cause of the issue—removing confidential data from the training process."
+    "explanation": "To ensure that the custom model does not generate responses based on confidential data, the best\napproach is to retrain the model without including the confidential data. This prevents the model from\nlearning patterns associated with that sensitive information, thereby avoiding its use in inference. The other\n\noptions do not address the root cause of the issue—removing confidential data from the training process."
   },
   {
     "number": 79,
@@ -1139,7 +1139,7 @@
     "correct_answer": [
       "B"
     ],
-    "explanation": "Ongoing pre-training helps enhance a foundation model's performance by continuously updating it with new\ndata, thereby improving its ability to generalize and perform well on different tasks. The other options do not\ndirectly relate to the benefits of ongoing pre-training.\n店铺：学习小店66"
+    "explanation": "Ongoing pre-training helps enhance a foundation model's performance by continuously updating it with new\ndata, thereby improving its ability to generalize and perform well on different tasks. The other options do not\ndirectly relate to the benefits of ongoing pre-training."
   },
   {
     "number": 82,
@@ -1181,7 +1181,7 @@
     "correct_answer": [
       "C"
     ],
-    "explanation": "Configuring Amazon SageMaker to use a VPC with an S3 endpoint ensures secure, direct, and managed\ndata flow between Amazon S3 and SageMaker Studio notebooks. This setup avoids public internet\nexposure and maintains data integrity during transfers. The other options do not provide a solution for\nmanaging the data flow in this context.\n店铺：学习小店66"
+    "explanation": "Configuring Amazon SageMaker to use a VPC with an S3 endpoint ensures secure, direct, and managed\ndata flow between Amazon S3 and SageMaker Studio notebooks. This setup avoids public internet\nexposure and maintains data integrity during transfers. The other options do not provide a solution for\nmanaging the data flow in this context."
   },
   {
     "number": 85,
@@ -1223,7 +1223,7 @@
     "correct_answer": [
       "C"
     ],
-    "explanation": "According to the AWS Shared Responsibility Model, AWS manages the security of the cloud, including the\ninfrastructure and services like Amazon Bedrock. Customers are responsible for security in the cloud,\nwhich encompasses protecting their data, managing access controls, and configuring security settings for\ntheir applications.\n店铺：学习小店66\n\nReference: https://aws.amazon.com/compliance/shared-responsibility-model/?nc1=h_ls"
+    "explanation": "According to the AWS Shared Responsibility Model, AWS manages the security of the cloud, including the\ninfrastructure and services like Amazon Bedrock. Customers are responsible for security in the cloud,\nwhich encompasses protecting their data, managing access controls, and configuring security settings for\ntheir applications.\n\nReference: https://aws.amazon.com/compliance/shared-responsibility-model/?nc1=h_ls"
   },
   {
     "number": 88,
@@ -1297,7 +1297,7 @@
   },
   {
     "number": 93,
-    "question": "A retail store wants to predict the demand for a specific product for the next few weeks by using the\nAmazon SageMaker DeepAR forecasting algorithm.\n Which type of data will meet this requirement?\n店铺：学习小店66",
+    "question": "A retail store wants to predict the demand for a specific product for the next few weeks by using the\nAmazon SageMaker DeepAR forecasting algorithm.\n Which type of data will meet this requirement?",
     "options": {
       "A": "Text data",
       "B": "Image data",
@@ -1339,7 +1339,7 @@
   },
   {
     "number": 96,
-    "question": "A company has fine-tuned a large language model (LLM) to answer questions for a help desk. The\ncompany wants to determine if the fine-tuning has enhanced the model's accuracy.\n店铺：学习小店66\n\nWhich metric should the company use for the evaluation?",
+    "question": "A company has fine-tuned a large language model (LLM) to answer questions for a help desk. The\ncompany wants to determine if the fine-tuning has enhanced the model's accuracy.\n\nWhich metric should the company use for the evaluation?",
     "options": {
       "A": "Precision",
       "B": "Time to first token",
@@ -1367,7 +1367,7 @@
   },
   {
     "number": 98,
-    "question": "A company wants to implement a large language model (LLM) based chatbot to provide customer service\nagents with real-time contextual responses to customers' inquiries. The company will use the company's\npolicies as the knowledge base.\n Which solution will meet these requirements MOST cost-effectively?\n店铺：学习小店66",
+    "question": "A company wants to implement a large language model (LLM) based chatbot to provide customer service\nagents with real-time contextual responses to customers' inquiries. The company will use the company's\npolicies as the knowledge base.\n Which solution will meet these requirements MOST cost-effectively?",
     "options": {
       "A": "Retrain the LLM on the company policy data.",
       "B": "Fine-tune the LLM on the company policy data.",
@@ -1405,7 +1405,7 @@
     "correct_answer": [
       "A"
     ],
-    "explanation": "The company is actively seeking to ensure that the image classification model is trained on a diverse\ndataset that includes insect bite photos from various genders, ethnicities, and geographic locations. This\nreflects the fairness principle of responsible AI, which emphasizes creating models that make unbiased\ndecisions across all demographic groups. By including a diverse range of data, the company is aiming to\nprevent biases that could lead to inaccurate diagnoses or treatments for certain groups of people.\n店铺：学习小店66\n\nFairness ensures that AI systems do not discriminate based on race, gender, geography, or other\ncharacteristics."
+    "explanation": "The company is actively seeking to ensure that the image classification model is trained on a diverse\ndataset that includes insect bite photos from various genders, ethnicities, and geographic locations. This\nreflects the fairness principle of responsible AI, which emphasizes creating models that make unbiased\ndecisions across all demographic groups. By including a diverse range of data, the company is aiming to\nprevent biases that could lead to inaccurate diagnoses or treatments for certain groups of people.\n\nFairness ensures that AI systems do not discriminate based on race, gender, geography, or other\ncharacteristics."
   },
   {
     "number": 101,
@@ -1439,7 +1439,7 @@
     "number": 103,
     "question": "An AI practitioner wants to predict the classification of flowers based on petal length, petal width, sepal\nlength, and sepal width.\nWhich algorithm meets these requirements?",
     "options": {
-      "A": "K-nearest neighbors (k-NN)\n店铺：学习小店66",
+      "A": "K-nearest neighbors (k-NN)",
       "B": "K-mean",
       "C": "Autoregressive Integrated Moving Average (ARIMA)",
       "D": "Linear regression"
@@ -1475,7 +1475,7 @@
     "correct_answer": [
       "B"
     ],
-    "explanation": "Text generation is the feature of large language models (LLMs) that enables them to produce text based\non a given prompt or input. In this scenario, the input would be natural language code comments, and the\n店铺：学习小店66\n\nLLM would generate code based on those comments. This process involves understanding the context of\nthe comment and generating corresponding code, which is the core functionality of text generation."
+    "explanation": "Text generation is the feature of large language models (LLMs) that enables them to produce text based\non a given prompt or input. In this scenario, the input would be natural language code comments, and the\n\nLLM would generate code based on those comments. This process involves understanding the context of\nthe comment and generating corresponding code, which is the core functionality of text generation."
   },
   {
     "number": 106,
@@ -1509,7 +1509,7 @@
     "number": 108,
     "question": "A company wants to use a large language model (LLM) to generate concise, feature-specific descriptions\nfor the company’s products.\nWhich prompt engineering technique meets these requirements?",
     "options": {
-      "A": "Create one prompt that covers all products. Edit the responses to make the responses more specific,\nconcise, and tailored to each product.\n店铺：学习小店66",
+      "A": "Create one prompt that covers all products. Edit the responses to make the responses more specific,\nconcise, and tailored to each product.",
       "B": "Create prompts for each product category that highlight the key features. Include the desired output\nformat and length for each prompt response.",
       "C": "Include a diverse range of product features in each prompt to generate creative and unique\ndescriptions.",
       "D": "Provide detailed, product-specific prompts to ensure precise and customized descriptions."
@@ -1573,7 +1573,7 @@
     "correct_answer": [
       "B"
     ],
-    "explanation": "Amazon Bedrock provides access to a variety of large language models (LLMs), which are well-suited for\ntasks such as text summarization. By using LLMs, the pharmaceutical company can automatically generate\nconcise and coherent summaries of user reviews for each medication. These models are designed to\nunderstand and process large amounts of text, making them ideal for summarizing user reviews in a clear\nand efficient manner.\nAmazon Bedrock allows the company to utilize LLMs that can generate summaries, which is exactly what\nis needed in this case.\n店铺：学习小店66"
+    "explanation": "Amazon Bedrock provides access to a variety of large language models (LLMs), which are well-suited for\ntasks such as text summarization. By using LLMs, the pharmaceutical company can automatically generate\nconcise and coherent summaries of user reviews for each medication. These models are designed to\nunderstand and process large amounts of text, making them ideal for summarizing user reviews in a clear\nand efficient manner.\nAmazon Bedrock allows the company to utilize LLMs that can generate summaries, which is exactly what\nis needed in this case."
   },
   {
     "number": 113,
@@ -1638,7 +1638,7 @@
       "A": "Use Amazon SageMaker and iterate with newer data.",
       "B": "Use Amazon Personalize and iterate with historical data.",
       "C": "Use Amazon CloudWatch to analyze customer orders.",
-      "D": "Use Amazon Rekognition to optimize the model.\n店铺：学习小店66"
+      "D": "Use Amazon Rekognition to optimize the model."
     },
     "correct_answer": [
       "A"
@@ -1671,7 +1671,7 @@
     "correct_answer": [
       "B"
     ],
-    "explanation": "Amazon Bedrock is a service that allows you to build AI-powered applications using foundation models\n(FMs) without managing infrastructure. Agents for Amazon Bedrock allows you to create intelligent agents\nthat can help users interact with data and perform tasks such as checking open customer claims, identifying\nclaim details, and accessing relevant documents.\nBy using Amazon Bedrock knowledge bases, the AI agent can access relevant information (e.g., details\nabout claims, documents, or customer data) in real time, and provide precise, context-driven answers\nbased on the claim-related data stored in the knowledge base.\n店铺：学习小店66\n\nAgents for Amazon Bedrock can help automate interactions by understanding and responding to\nnatural language queries, making it a good fit for this use case.\nAmazon Bedrock knowledge bases enable the system to access stored information, documents, and\ndetails for specific claims efficiently."
+    "explanation": "Amazon Bedrock is a service that allows you to build AI-powered applications using foundation models\n(FMs) without managing infrastructure. Agents for Amazon Bedrock allows you to create intelligent agents\nthat can help users interact with data and perform tasks such as checking open customer claims, identifying\nclaim details, and accessing relevant documents.\nBy using Amazon Bedrock knowledge bases, the AI agent can access relevant information (e.g., details\nabout claims, documents, or customer data) in real time, and provide precise, context-driven answers\nbased on the claim-related data stored in the knowledge base.\n\nAgents for Amazon Bedrock can help automate interactions by understanding and responding to\nnatural language queries, making it a good fit for this use case.\nAmazon Bedrock knowledge bases enable the system to access stored information, documents, and\ndetails for specific claims efficiently."
   },
   {
     "number": 121,
@@ -1743,7 +1743,7 @@
       "A",
       "D"
     ],
-    "explanation": "AWS CloudTrail is the AWS service designed for logging and monitoring API calls made to AWS services,\nincluding Amazon Bedrock. CloudTrail records detailed information about the API requests, including the\nidentity of the requester, the time of the request, and the source IP address. This service is ideal for logging\nall requests made to the Amazon Bedrock API and meets the logging requirement.\nAmazon S3 Intelligent-Tiering is a storage class designed for storing data that has unpredictable access\npatterns. It automatically moves data between two access tiers (frequent and infrequent) based on usage,\n店铺：学习小店66\n\nwhich helps reduce costs while ensuring data is still available when needed. For retaining logs securely over\n5 years at the lowest possible cost, this storage class provides an efficient way to handle long-term storage\nrequirements without incurring unnecessary costs."
+    "explanation": "AWS CloudTrail is the AWS service designed for logging and monitoring API calls made to AWS services,\nincluding Amazon Bedrock. CloudTrail records detailed information about the API requests, including the\nidentity of the requester, the time of the request, and the source IP address. This service is ideal for logging\nall requests made to the Amazon Bedrock API and meets the logging requirement.\nAmazon S3 Intelligent-Tiering is a storage class designed for storing data that has unpredictable access\npatterns. It automatically moves data between two access tiers (frequent and infrequent) based on usage,\n\nwhich helps reduce costs while ensuring data is still available when needed. For retaining logs securely over\n5 years at the lowest possible cost, this storage class provides an efficient way to handle long-term storage\nrequirements without incurring unnecessary costs."
   },
   {
     "number": 127,
@@ -1819,7 +1819,7 @@
     "number": 132,
     "question": "A company is building a mobile app for users who have a visual impairment. The app must be able to hear\nwhat users say and provide voice responses.\nWhich solution will meet these requirements?",
     "options": {
-      "A": "Use a deep learning neural network to perform speech recognition.\n店铺：学习小店66",
+      "A": "Use a deep learning neural network to perform speech recognition.",
       "B": "Build ML models to search for patterns in numeric data.",
       "C": "Use generative AI summarization to generate human-like text.",
       "D": "Build custom models for image classification and recognition."
@@ -1892,7 +1892,7 @@
       "A": "K-nearest neighbors (k-NN)",
       "B": "K-means",
       "C": "Decision tree",
-      "D": "Support vector machine\n店铺：学习小店66"
+      "D": "Support vector machine"
     },
     "correct_answer": [
       "B"
@@ -1929,7 +1929,7 @@
   },
   {
     "number": 141,
-    "question": "A company’s employees provide product descriptions and recommendations to customers when customers\ncall the customer service center. These recommendations are based on where the customers are located.\nThe company wants to use foundation models (FMs) to automate this process.\nWhich AWS service meets these requirements?\n店铺：学习小店66",
+    "question": "A company’s employees provide product descriptions and recommendations to customers when customers\ncall the customer service center. These recommendations are based on where the customers are located.\nThe company wants to use foundation models (FMs) to automate this process.\nWhich AWS service meets these requirements?",
     "options": {
       "A": "Amazon Macie",
       "B": "Amazon Transcribe",
@@ -2003,7 +2003,7 @@
     "options": {
       "A": "Fairness",
       "B": "Explainability",
-      "C": "Privacy and security\n店铺：学习小店66",
+      "C": "Privacy and security",
       "D": "Transparency"
     },
     "correct_answer": [
@@ -2043,7 +2043,7 @@
   },
   {
     "number": 151,
-    "question": "店铺：学习小店66\n\nA company wants to identify harmful language in the comments section of social media posts by using an\nML model. The company will not use labeled data to train the model.\nWhich strategy should the company use to identify harmful language?",
+    "question": "A company wants to identify harmful language in the comments section of social media posts by using an\nML model. The company will not use labeled data to train the model.\nWhich strategy should the company use to identify harmful language?",
     "options": {
       "A": "Use Amazon Rekognition moderation.",
       "B": "Use Amazon Comprehend toxicity detection.",
@@ -2081,7 +2081,7 @@
     "correct_answer": [
       "A"
     ],
-    "explanation": "Amazon SageMaker Model Cards help provide transparency into AI/ML models by documenting key\ndetails such as model purpose, training data, performance metrics, and limitations. This documentation\n店铺：学习小店66\n\nenables organizations to explain model outputs and decision-making processes, ensuring\naccountability and compliance with responsible AI principles."
+    "explanation": "Amazon SageMaker Model Cards help provide transparency into AI/ML models by documenting key\ndetails such as model purpose, training data, performance metrics, and limitations. This documentation\n\nenables organizations to explain model outputs and decision-making processes, ensuring\naccountability and compliance with responsible AI principles."
   },
   {
     "number": 154,
@@ -2118,7 +2118,7 @@
       "A": "Summarizing customer complaints",
       "B": "Classifying customers based on product usage",
       "C": "Segmenting customers based on type of investments",
-      "D": "Forecasting revenue for certain products\n店铺：学习小店66"
+      "D": "Forecasting revenue for certain products"
     },
     "correct_answer": [
       "A"
@@ -2160,7 +2160,7 @@
       "A": "The temperature is set too high.",
       "B": "The selected model does not support fine-tuning.",
       "C": "The Top P value is too high.",
-      "D": "The input tokens exceed the model’s context size.\n店铺：学习小店66"
+      "D": "The input tokens exceed the model’s context size."
     },
     "correct_answer": [
       "D"
@@ -2420,7 +2420,7 @@
     "correct_answer": [
       "A"
     ],
-    "explanation": "By retrieving relevant documents or data at inference time and conditioning the generation on that external\nknowledge, RAG enriches model outputs with up-to-date, domain-specific information, boosting accuracy\n店铺：学习小店66\n\nand informativeness without retraining the core model."
+    "explanation": "By retrieving relevant documents or data at inference time and conditioning the generation on that external\nknowledge, RAG enriches model outputs with up-to-date, domain-specific information, boosting accuracy\n\nand informativeness without retraining the core model."
   },
   {
     "number": 179,
@@ -2466,7 +2466,7 @@
   },
   {
     "number": 182,
-    "question": "店铺：学习小店66\n\nWhich option is a benefit of using infrastructure as code (IaC) in machine learning operations (MLOps)?",
+    "question": "Which option is a benefit of using infrastructure as code (IaC) in machine learning operations (MLOps)?",
     "options": {
       "A": "IaC eliminates the need for hyperparameter tuning.",
       "B": "IaC always provisions powerful compute instances, contributing to the training of more accurate models.",
@@ -2522,7 +2522,7 @@
   },
   {
     "number": 187,
-    "question": "A financial company wants to flag all credit card activity as possibly fraudulent or non-fraudulent based on\ntransaction data.\n店铺：学习小店66\n\nWhich type of ML model meets these requirements?",
+    "question": "A financial company wants to flag all credit card activity as possibly fraudulent or non-fraudulent based on\ntransaction data.\n\nWhich type of ML model meets these requirements?",
     "options": {
       "A": "Regression",
       "B": "Diffusion",
@@ -2560,7 +2560,7 @@
     "correct_answer": [
       "B"
     ],
-    "explanation": "Regression models are designed to predict continuous numerical values (for example, forecasting sales\nfigures or estimating house prices), making them the appropriate choice for numeric predictions.\n店铺：学习小店66"
+    "explanation": "Regression models are designed to predict continuous numerical values (for example, forecasting sales\nfigures or estimating house prices), making them the appropriate choice for numeric predictions."
   },
   {
     "number": 192,
@@ -2584,7 +2584,7 @@
       "B": "Use the Amazon Bedrock API.",
       "C": "Use AWS PrivateLink and a VPC.",
       "D": "Host the Amazon Bedrock API on premises.",
-      "E": "Use Amazon CloudWatch logs and metrics.\n店铺：学习小店66"
+      "E": "Use Amazon CloudWatch logs and metrics."
     },
     "correct_answer": [
       "B",
@@ -2604,6 +2604,6 @@
     "correct_answer": [
       "B"
     ],
-    "explanation": "AWS Artifact provides on-demand access to AWS’s compliance reports and certifications (for example,\nISO, SOC, GDPR), enabling the company to demonstrate its generative AI workloads and data handling\npractices adhere to international regulatory requirements.\n店铺：学习小店66"
+    "explanation": "AWS Artifact provides on-demand access to AWS’s compliance reports and certifications (for example,\nISO, SOC, GDPR), enabling the company to demonstrate its generative AI workloads and data handling\npractices adhere to international regulatory requirements."
   }
 ]

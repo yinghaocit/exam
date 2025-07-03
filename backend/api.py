@@ -21,13 +21,21 @@ class ExamRequest(BaseModel):
     count_per_type: List[int]
 
 
-@app.post("/questions/")
+@app.post("/questions")
 async def create_question(question: dict):
     """
     接收仅包含 type、question、explanation、answers 的 dict，自动补全中英文结构并入库。
     """
-    full_question = translate_question_dict(question)
+    original_number = question.get("original_number")
+    if original_number is not None:
+        existing_question = await Question.filter(original_number=original_number).first()
+        if existing_question:
+            return {"id": existing_question.id}
+
+    full_question = await translate_question_dict(question)
+
     question_obj = await Question.create(
+        original_number=original_number,
         type=full_question["type"],
         question_en=full_question["question_en"],
         question_cn=full_question["question_cn"],

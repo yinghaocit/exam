@@ -3,6 +3,7 @@ from tortoise import fields
 
 class Question(Model):
     id = fields.IntField(pk=True)
+    original_number = fields.IntField(description="原题号")
     type = fields.IntField(description="题型（单选、多选）")
     question_en = fields.TextField(description="英文问题")
     question_cn = fields.TextField(description="中文问题")

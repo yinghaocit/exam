@@ -53,9 +53,9 @@ def extract_questions(pdf_path):
 
 
 if __name__ == "__main__":
-    questions = extract_questions("../AIF-C01.pdf")
+    questions = extract_questions("../develop/AIF-C01.pdf")
 
-    with open("questions.json", "w", encoding="utf-8") as f:
+    with open("questions01.json", "w", encoding="utf-8") as f:
         json.dump(questions, f, ensure_ascii=False, indent=2)
 
     print("✅ 已保存为 questions.json")
