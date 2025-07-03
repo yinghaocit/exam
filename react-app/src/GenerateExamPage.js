@@ -1,9 +1,9 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 import React, { useState, useEffect } from 'react';
 import { Tag, Layout, Button, Space, Modal, InputNumber, Radio, Menu } from 'antd';
 import { useNavigate, Link } from 'react-router-dom';
 
 const { Header, Content, Sider } = Layout;
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const GenerateExamPage = () => {
   const navigate = useNavigate();

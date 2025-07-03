@@ -1,9 +1,9 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 import React, { useState } from 'react';
 import { Layout, Menu, Form, Input, Button, Space, Checkbox } from 'antd';
 import { Link } from 'react-router-dom';
 
 const { Header, Content, Sider } = Layout;
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const CreateQuestionPage = () => {
   const [answers, setAnswers] = useState([{ content: '', isCorrect: false }]);
