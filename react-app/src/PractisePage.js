@@ -44,6 +44,16 @@ const GenerateExamPage = () => {
     a.length === b.length &&
     a.every(id => b.includes(id));
 
+  // 提取多选题确认逻辑
+  const confirmMultiChoiceAnswer = (qid) => {
+    const current = questions.find(q => q.id === qid);
+    const correctAnswerIds = current.answers.filter(a => a.is_correct).map(a => a.id);
+    const answer = answers[qid];
+    const isCorrect = arraysEqualIgnoreOrder(correctAnswerIds, answer);
+    setIsCorrectMap(prev => ({ ...prev, [qid]: isCorrect }));
+    setConfirmedMap(prev => ({ ...prev, [qid]: true }));
+  };
+
   const handleAnswer = (questionId, answerId) => {
     const newAnswers = { ...answers, [questionId]: answerId };
     setAnswers(newAnswers);
@@ -232,6 +242,9 @@ const GenerateExamPage = () => {
                     ? (answers[qid] || []).includes(answer.id)
                     : answers[qid] === answer.id);
 
+                  // 控制按钮类型变量
+                  const shouldShowPrimary = isSelected && !showResult;
+
                   const isCorrect = answer.is_correct;
                   let borderColor;
                   if (showResult) {
@@ -246,7 +259,7 @@ const GenerateExamPage = () => {
                     return (
                       <Button
                         key={answer.id}
-                        type="default"
+                        type={shouldShowPrimary ? 'primary' : 'default'}
                         onClick={() => {
                           const currentAnswers = answers[qid] || [];
                           const updated = currentAnswers.includes(answer.id)
@@ -293,7 +306,7 @@ const GenerateExamPage = () => {
                     return (
                       <Button
                         key={answer.id}
-                        type="default"
+                        type={shouldShowPrimary ? 'primary' : 'default'}
                         onClick={() => handleAnswer(qid, answer.id)}
                         style={{
                           fontSize: '16px',
@@ -343,24 +356,6 @@ const GenerateExamPage = () => {
                 );
               })()}
 
-              {questions[currentQuestionIndex]?.type === 2 && (
-                <Button
-                  type="primary"
-                  onClick={() => {
-                    const qid = questions[currentQuestionIndex].id;
-                    const current = questions.find(q => q.id === qid);
-                    const correctAnswerIds = current.answers.filter(a => a.is_correct).map(a => a.id);
-                    const answer = answers[qid];
-                    const isCorrect = arraysEqualIgnoreOrder(correctAnswerIds, answer);
-                    setIsCorrectMap(prev => ({ ...prev, [qid]: isCorrect }));
-                    setConfirmedMap(prev => ({ ...prev, [qid]: true }));
-                  }}
-                  style={{ marginTop: '10px', marginBottom: '20px' }}
-                  disabled={confirmedMap[questions[currentQuestionIndex].id]}
-                >
-                  确认答案
-                </Button>
-              )}
 
               <div style={{ marginTop: '20px' }}>
                 <Button
@@ -370,7 +365,17 @@ const GenerateExamPage = () => {
                 >上一题</Button>
                 <Button
                   type="primary"
-                  onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}
+                  onClick={() => {
+                    const qid = questions[currentQuestionIndex].id;
+                    const current = questions[currentQuestionIndex];
+
+                    if (current.type === 2 && !confirmedMap[qid]) {
+                      confirmMultiChoiceAnswer(qid);
+                      return;
+                    }
+
+                    setCurrentQuestionIndex(currentQuestionIndex + 1);
+                  }}
                   disabled={currentQuestionIndex === questions.length - 1}
                 >
                   下一题
