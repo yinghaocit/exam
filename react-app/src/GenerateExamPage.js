@@ -116,7 +116,7 @@ const GenerateExamPage = () => {
               <Link to="/create-question">录入考题</Link>
             </Menu.Item>
             <Menu.Item key="generate-exam">
-              <Link to="/generate-exam">出题</Link>
+              <Link to="/generate-exam">答题</Link>
             </Menu.Item>
           </Menu>
           <Button type="primary" onClick={handleSubmit} style={{ margin: '10px 0', width: '100%' }}>
@@ -172,7 +172,7 @@ const GenerateExamPage = () => {
             title="选择题目数量"
             open={isModalVisible}
             onOk={handleModalOk}
-            okText="重新出题"
+            okText="重新答题"
             cancelText="继续答题"
             onCancel={() => {
               const cached = JSON.parse(localStorage.getItem('examQuestions') || '[]');
@@ -182,7 +182,7 @@ const GenerateExamPage = () => {
                 setAnswers(cachedAnswers);
                 setIsModalVisible(false);
               } else {
-                alert('暂无缓存的题目，请重新出题');
+                alert('暂无缓存的题目，请重新答题');
               }
             }}
           >

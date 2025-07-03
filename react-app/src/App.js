@@ -25,7 +25,7 @@ const WelcomePage = () => (
           </Col>
           <Col>
             <Button type="primary" href="/generate-exam">
-              出题
+              答题
             </Button>
           </Col>
         </Row>

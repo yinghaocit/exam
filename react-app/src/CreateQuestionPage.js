@@ -74,7 +74,7 @@ const CreateQuestionPage = () => {
               <Link to="/create-question">录入考题</Link>
             </Menu.Item>
             <Menu.Item key="generate-exam">
-              <Link to="/generate-exam">出题</Link>
+              <Link to="/generate-exam">答题</Link>
             </Menu.Item>
           </Menu>
         </Sider>
