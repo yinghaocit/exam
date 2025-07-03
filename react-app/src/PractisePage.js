@@ -205,37 +205,6 @@ const GenerateExamPage = () => {
                 {questions[currentQuestionIndex]?.type === 2 && <Tag color='orange'>多选题</Tag>}
               </div>
 
-              {(() => {
-                const q = questions[currentQuestionIndex];
-                const qid = q?.id;
-                const ans = answers[qid];
-                const hasAnswered = q?.type === 1
-                  ? ans !== undefined
-                  : Array.isArray(ans) && ans.length > 0;
-                return hasAnswered &&
-                  (q?.type === 1 || confirmedMap[qid]) &&
-                  isCorrectMap[qid] !== undefined;
-              })() && (() => {
-                const q = questions[currentQuestionIndex];
-                const qid = q?.id;
-                return (
-                  <>
-                    <div style={{ marginBottom: '10px', color: isCorrectMap[qid] ? 'green' : 'red' }}>
-                      {isCorrectMap[qid] ? '回答正确' : '回答错误'}
-                    </div>
-                    <div style={{ marginBottom: '20px', color: '#555', fontStyle: 'italic' }}>
-                      {language === 'cn' && questions[currentQuestionIndex]?.explanation_cn}
-                      {language === 'en' && questions[currentQuestionIndex]?.explanation_en}
-                      {language === 'both' && (
-                        <>
-                          <div>{questions[currentQuestionIndex]?.explanation_cn}</div>
-                          <div style={{ color: '#888', marginTop: '6px' }}>{questions[currentQuestionIndex]?.explanation_en}</div>
-                        </>
-                      )}
-                    </div>
-                  </>
-                );
-              })()}
 
               {renderQuestionWithIndex(questions[currentQuestionIndex], currentQuestionIndex)}
 
@@ -277,7 +246,7 @@ const GenerateExamPage = () => {
                     return (
                       <Button
                         key={answer.id}
-                        type={isSelected ? 'primary' : 'default'}
+                        type="default"
                         onClick={() => {
                           const currentAnswers = answers[qid] || [];
                           const updated = currentAnswers.includes(answer.id)
@@ -313,7 +282,8 @@ const GenerateExamPage = () => {
                           padding: '10px 20px',
                           borderColor,
                           borderWidth: showResult ? 2 : undefined,
-                          borderStyle: showResult ? 'solid' : undefined
+                          borderStyle: showResult ? 'solid' : undefined,
+                          backgroundColor: showResult && isCorrect ? 'rgba(76, 175, 80, 0.15)' : undefined
                         }}
                       >
                         {renderAnswerWithIndex(answer, answerIndex)}
@@ -323,14 +293,15 @@ const GenerateExamPage = () => {
                     return (
                       <Button
                         key={answer.id}
-                        type={isSelected ? 'primary' : 'default'}
+                        type="default"
                         onClick={() => handleAnswer(qid, answer.id)}
                         style={{
                           fontSize: '16px',
                           padding: '10px 20px',
                           borderColor,
                           borderWidth: showResult ? 2 : undefined,
-                          borderStyle: showResult ? 'solid' : undefined
+                          borderStyle: showResult ? 'solid' : undefined,
+                          backgroundColor: showResult && isCorrect ? 'rgba(76, 175, 80, 0.15)' : undefined
                         }}
                       >
                         {renderAnswerWithIndex(answer, answerIndex)}
@@ -339,6 +310,38 @@ const GenerateExamPage = () => {
                   }
                 })}
               </Space>
+
+              {(() => {
+                const q = questions[currentQuestionIndex];
+                const qid = q?.id;
+                const ans = answers[qid];
+                const hasAnswered = q?.type === 1
+                  ? ans !== undefined
+                  : Array.isArray(ans) && ans.length > 0;
+                return hasAnswered &&
+                  (q?.type === 1 || confirmedMap[qid]) &&
+                  isCorrectMap[qid] !== undefined;
+              })() && (() => {
+                const q = questions[currentQuestionIndex];
+                const qid = q?.id;
+                return (
+                  <>
+                    <div style={{ margin: '20px 0 10px', color: isCorrectMap[qid] ? 'green' : 'red' }}>
+                      {isCorrectMap[qid] ? '回答正确' : '回答错误'}
+                    </div>
+                    <div style={{ marginBottom: '30px', color: '#555', fontStyle: 'italic' }}>
+                      {language === 'cn' && questions[currentQuestionIndex]?.explanation_cn}
+                      {language === 'en' && questions[currentQuestionIndex]?.explanation_en}
+                      {language === 'both' && (
+                        <>
+                          <div>{questions[currentQuestionIndex]?.explanation_cn}</div>
+                          <div style={{ color: '#888', marginTop: '6px' }}>{questions[currentQuestionIndex]?.explanation_en}</div>
+                        </>
+                      )}
+                    </div>
+                  </>
+                );
+              })()}
 
               {questions[currentQuestionIndex]?.type === 2 && (
                 <Button
