@@ -34,8 +34,12 @@ async def restore():
         for model_name, model in reversed(list(Tortoise.apps[app_name].items())):
             await model.all().delete()
 
-    # 再写入数据
-    for key, items in data.items():
+    # 手动定义插入顺序（先插入 question，再插入 answer，再插入其他表）
+    restore_order = ["models.Question", "models.Answer"]
+    ordered_keys = restore_order + [k for k in data.keys() if k not in restore_order]
+
+    for key in ordered_keys:
+        items = data[key]
         app_name, model_name = key.split('.')
         model = Tortoise.apps[app_name][model_name]
         for item in items:

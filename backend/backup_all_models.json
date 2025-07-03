@@ -5704,8 +5704,8 @@
         {
             "id": 30,
             "type": 1,
-            "question_en": "A company has developed an ML model for image classification. The company wants to deploy the model to production so that a web application can use the model. The company needs to implement a solution to host the model and serve predictions without managing any of the underlying infrastructure. 店铺：学习小店66\n\nWhich solution will meet these requirements?",
-            "question_cn": "一家公司开发了一个用于图像分类的机器学习模型。该公司希望将模型部署到生产环境，以便网络应用程序可以使用该模型。该公司需要实施一个解决方案来托管模型并提供预测，而无需管理任何底层基础设施。店铺：学习小店66\n\n哪种解决方案可以满足这些要求？",
+            "question_en": "A company has developed an ML model for image classification. The company wants to deploy the model to production so that a web application can use the model. The company needs to implement a solution to host the model and serve predictions without managing any of the underlying infrastructure. Which solution will meet these requirements?",
+            "question_cn": "一家公司开发了一个用于图像分类的机器学习模型。该公司希望将模型部署到生产环境，以便网络应用程序可以使用该模型。该公司需要实施一个解决方案来托管模型并提供预测，而无需管理任何底层基础设施。哪种解决方案可以满足这些要求？",
             "explanation_en": "Amazon SageMaker Serverless Inference allows the company to deploy the ML model without managing any underlying infrastructure, making it suitable for hosting the model and serving predictions. The other options do not directly provide serverless model deployment capabilities.",
             "explanation_cn": "Amazon SageMaker 无服务器推理允许公司在不管理任何底层基础设施的情况下部署机器学习模型，使其适合托管模型并提供预测。其他选项并未直接提供无服务器模型部署能力。"
         },
@@ -5888,8 +5888,8 @@
         {
             "id": 53,
             "type": 1,
-            "question_en": "A company is using an Amazon Bedrock base model to summarize documents for an internal use case.\nThe company trained a custom model to improve the summarization quality.\nStore: Learning Shop 66\n\nWhich action must the company take to use the custom model through Amazon Bedrock?",
-            "question_cn": "一家公司正在使用 Amazon Bedrock 基础模型来总结内部使用案例的文档。\n该公司训练了一个自定义模型以提高摘要质量。\n店铺：学习小店66\n\n公司必须采取什么措施才能通过 Amazon Bedrock 使用自定义模型？",
+            "question_en": "A company is using an Amazon Bedrock base model to summarize documents for an internal use case.\nThe company trained a custom model to improve the summarization quality.\nWhich action must the company take to use the custom model through Amazon Bedrock?",
+            "question_cn": "一家公司正在使用 Amazon Bedrock 基础模型来总结内部使用案例的文档。\n该公司训练了一个自定义模型以提高摘要质量。\n公司必须采取什么措施才能通过 Amazon Bedrock 使用自定义模型？",
             "explanation_en": "",
             "explanation_cn": ""
         },
@@ -6097,7 +6097,7 @@
             "id": 79,
             "type": 1,
             "question_en": "A company has documents that are missing some words because of a database error. The company wants to build an ML model that can suggest potential words to fill in the missing text.\nShop: Learning Store 66\n\nWhich type of model meets this requirement?",
-            "question_cn": "一家公司的文件因数据库错误而缺少一些词。该公司希望构建一个机器学习模型，能够建议潜在的词来填补缺失的文本。\n店铺：学习小店66\n\n哪种类型的模型满足这一要求？",
+            "question_cn": "一家公司的文件因数据库错误而缺少一些词。该公司希望构建一个机器学习模型，能够建议潜在的词来填补缺失的文本。\n哪种类型的模型满足这一要求？",
             "explanation_en": "BERT-based models are well-suited for natural language understanding tasks, including filling in missing words, because they use contextual information to predict missing tokens in a text. The other types of models are not designed for this type of text completion task.",
             "explanation_cn": "基于BERT的模型非常适合自然语言理解任务，包括填补缺失的词，因为它们利用上下文信息来预测文本中的缺失标记。其他类型的模型并不适合这种文本补全任务。"
         },
@@ -6936,8 +6936,8 @@
         {
             "id": 184,
             "type": 1,
-            "question_en": "A financial company wants to flag all credit card activity as possibly fraudulent or non-fraudulent based on transaction data.\nStore: Learning Shop 66\n\nWhich type of ML model meets these requirements?",
-            "question_cn": "一家金融公司希望根据交易数据将所有信用卡活动标记为可能的欺诈或非欺诈。\n店铺：学习小店66\n\n哪种类型的机器学习模型满足这些要求？",
+            "question_en": "A financial company wants to flag all credit card activity as possibly fraudulent or non-fraudulent based on transaction data.\nWhich type of ML model meets these requirements?",
+            "question_cn": "一家金融公司希望根据交易数据将所有信用卡活动标记为可能的欺诈或非欺诈。\n哪种类型的机器学习模型满足这些要求？",
             "explanation_en": "Binary classification models are designed to distinguish between two classes - fraudulent versus non-fraudulent transactions - making them the appropriate choice for this use case.",
             "explanation_cn": "二元分类模型旨在区分两类 - 欺诈交易与非欺诈交易 - 使其成为此用例的合适选择。"
         },
