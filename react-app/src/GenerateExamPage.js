@@ -112,11 +112,14 @@ const GenerateExamPage = () => {
       <Layout>
         <Sider width={250} style={{ background: '#fff', padding: '10px', borderRight: '1px solid #ddd' }}>
           <Menu mode="vertical" defaultSelectedKeys={['generate-exam']}>
-            <Menu.Item key="create-question">
+            {/* <Menu.Item key="create-question">
               <Link to="/create-question">录入考题</Link>
-            </Menu.Item>
+            </Menu.Item> */}
             <Menu.Item key="generate-exam">
               <Link to="/generate-exam">答题</Link>
+            </Menu.Item>
+            <Menu.Item key="practise">
+              <Link to="/practise">练习</Link>
             </Menu.Item>
           </Menu>
           <Button type="primary" onClick={handleSubmit} style={{ margin: '10px 0', width: '100%' }}>

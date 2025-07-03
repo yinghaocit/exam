@@ -76,6 +76,9 @@ const CreateQuestionPage = () => {
             <Menu.Item key="generate-exam">
               <Link to="/generate-exam">答题</Link>
             </Menu.Item>
+            <Menu.Item key="practise">
+              <Link to="/practise">练习</Link>
+            </Menu.Item>
           </Menu>
         </Sider>
         <Content style={{ padding: '24px', margin: 0, minHeight: 280 }}>

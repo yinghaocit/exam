@@ -19,11 +19,11 @@ const WelcomePage = () => (
     <Content style={{ padding: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
       <Card title="欢迎使用考试系统" style={{ width: 400, textAlign: 'center' }}>
         <Row gutter={16} justify="center">
-          <Col>
+          {/* <Col>
             <Button type="default" href="/create-question">
               录入考题
             </Button>
-          </Col>
+          </Col> */}
           <Col>
             <Button type="primary" href="/generate-exam">
               答题
