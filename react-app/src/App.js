@@ -4,7 +4,8 @@ import { Layout, Menu, Card, Button, Row, Col } from 'antd';
 import 'antd/dist/reset.css';
 import CreateQuestionPage from './CreateQuestionPage';
 import GenerateExamPage from './GenerateExamPage';
- import ExamResultPage from './ExamResultPage';
+import ExamResultPage from './ExamResultPage';
+import PractisePage from './PractisePage';
 
 const { Header, Content, Footer } = Layout;
 
@@ -28,6 +29,11 @@ const WelcomePage = () => (
               答题
             </Button>
           </Col>
+           <Col>
+             <Button type="dashed" href="/practise">
+               练习模式
+             </Button>
+           </Col>
         </Row>
         <div style={{ marginTop: 24, textAlign: 'left' }}>
           <p><strong>缺失题</strong></p>
@@ -56,6 +62,7 @@ const App = () => (
       <Route path="/create-question" element={<CreateQuestionPage />} />
       <Route path="/generate-exam" element={<GenerateExamPage />} />
        <Route path="/exam-result" element={<ExamResultPage />} />
+       <Route path="/practise" element={<PractisePage />} />
     </Routes>
   </Router>
 );
