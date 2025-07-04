@@ -1,29 +1,40 @@
-# 前端构建阶段
-FROM node:18 AS frontend-build
-WORKDIR /app/react-app
-COPY react-app/package.json react-app/package-lock.json ./
-RUN npm install
-COPY react-app ./
-RUN npm run build
+# ========================
+# 基础镜像：Node + Python 共存
+# ========================
+FROM node:20
 
-# 后端构建阶段
-FROM python:3.10-slim AS backend
-WORKDIR /app
-
-# 安装编译依赖
+# 安装 Python + supervisor
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential gcc g++ make libffi-dev libssl-dev python3-dev \
+    python3.10 python3-pip python3-dev \
+    build-essential gcc g++ libffi-dev libssl-dev \
+    supervisor \
     && rm -rf /var/lib/apt/lists/*
 
-COPY backend ./backend
-COPY backend/requirements.txt ./backend/requirements.txt
-RUN pip install --no-cache-dir -i https://mirrors.aliyun.com/pypi/simple/ -r ./backend/requirements.txt
+# 设置工作目录
+WORKDIR /app
 
-# 拷贝前端构建产物到后端
-COPY --from=frontend-build /app/react-app/build ./backend/static
+# ========================
+# 安装前端依赖
+# ========================
+COPY react-app/package.json react-app/package-lock.json ./react-app/
+WORKDIR /app/react-app
+RUN npm install
+COPY react-app ./
 
-# 启动服务
+# ========================
+# 安装后端依赖
+# ========================
 WORKDIR /app/backend
-ENV PYTHONUNBUFFERED=1
-EXPOSE 8000
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+COPY backend/requirements.txt ./
+RUN pip3 install --break-system-packages -i https://mirrors.aliyun.com/pypi/simple/ -r requirements.txt
+COPY backend ./
+
+# ========================
+# 添加 supervisor 配置
+# ========================
+WORKDIR /app
+COPY supervisord-dev.conf /etc/supervisord.conf
+
+# 启动 3000 + 8000
+EXPOSE 3000 8000
+CMD ["supervisord", "-c", "/etc/supervisord.conf"]
